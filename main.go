@@ -1,39 +1,15 @@
 package main
 
 import (
-	"LeetCode/problem1530"
-	"bufio"
-	"fmt"
-	"os"
+	problem "LeetCode/problem1380"
 )
 
+const inputFilePath = "problem1380\\sampleInputs.txt"
+
 func main() {
-	startScan()
-	var testCases int
-	fmt.Scanln(&testCases)
-	var inputs = make(problem1530.Inputs, testCases)
-	var outputs = make(problem1530.Outputs, testCases)
-	
-	for i := range inputs {
-		inputs[i].ScanInput()
-		outputs[i].CalculateOutput(inputs[i])
-	}
-
-	for i := range outputs {
-		outputs[i].PrintOutput()
-	}
-}
-
-type GetInput interface {
-	ScanInput()
-}
-
-type GetOutput interface {
-	CalculateOutput(any)
-	PrintOutput()
-}
-
-func startScan() {
-	var scanner = bufio.NewScanner(os.Stdin)
-	scanner.Split(bufio.ScanWords)
+	var inputs problem.Inputs
+	var outputs problem.Outputs
+	inputs.ScanInputs(inputFilePath)
+	outputs.CalculateOutputs(inputs)
+	outputs.PrintOutputs()
 }

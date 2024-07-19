@@ -3,7 +3,7 @@ package problem1530
 import "fmt"
 
 type Input struct {
-	root *TreeNode
+	root     *TreeNode
 	distance int
 }
 
