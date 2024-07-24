@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+const INPUT_FILE_PATH = "problem1380\\sampleInputs.txt"
+
 type Input struct {
 	matrix [][]int
 }
@@ -24,9 +26,9 @@ m n (m = number of rows, n = number of columns) (for each test case)
 n space separated numbers representing each row of the matrix (m lines) (for each test case)
 */
 
-func (inputs *Inputs) ScanInputs(filePath string) {
+func (inputs *Inputs) ScanInputs() {
 
-	var r = util.GetFileAsString(filePath)
+	var r = util.GetFileAsString(INPUT_FILE_PATH)
 
 	var testCases int
 	fmt.Sscanf(r, "%d\n", &testCases)

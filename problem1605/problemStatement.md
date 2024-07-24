@@ -30,7 +30,7 @@ Example 2:
 Constraints:
 
 * 1 <= rowSum.length, colSum.length <= 500
-* 0 <= rowSum[i], colSum[i] <= 108
+* 0 <= rowSum[i], colSum[i] <= 10<sup>8</sup>
 * sum(rowSum) == sum(colSum)
 
 Link : https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/description/

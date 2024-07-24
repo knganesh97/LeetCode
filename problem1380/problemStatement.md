@@ -27,7 +27,7 @@ Constraints:
 * m == mat.length
 * n == mat[i].length
 * 1 <= n, m <= 50
-* 1 <= matrix[i][j] <= 105
+* 1 <= matrix[i][j] <= 10<sup>5</sup>
 * All elements in the matrix are distinct.
 
 Link : https://leetcode.com/problems/lucky-numbers-in-a-matrix/description/

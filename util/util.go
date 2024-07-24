@@ -4,9 +4,25 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
+/**
+* Interfaces
+ */
+type InputScanner interface {
+	ScanInputs()
+}
+
+type OutputPrinter interface {
+	CalculateOutputs(any)
+	PrintOutputs()
+}
+
+/**
+* Helper Functions
+*/
 func GetFileAsString(filePath string) string {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -33,11 +49,13 @@ func RemoveFirstWord(s string) string {
 	return s[i+1:]
 }
 
-type InputScanner interface {
-	ScanInputs(filePath string)
-}
-
-type OutputPrinter interface {
-	CalculateOutputs(any)
-	PrintOutputs()
+func PrintArrayAsText(nums []int) {
+	var text strings.Builder
+	for i := range nums {
+		text.WriteString(strconv.Itoa(nums[i]))
+		if i < len(nums)-1 {
+			text.WriteByte(' ')
+		}
+	}
+	fmt.Println(text.String())
 }

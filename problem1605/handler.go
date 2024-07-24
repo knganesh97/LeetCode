@@ -10,6 +10,8 @@ import (
 	"strings"
 )
 
+const INPUT_FILE_PATH = "problem1605\\sampleInputs.txt"
+
 type Input struct {
 	rowSum []int
 	colSum []int
@@ -33,10 +35,10 @@ m space separated numbers each representing the sum of a row of the matrix (for 
 n space separated numbers each representing the sum of a column of the matrix (for each test case)
 */
 
-func (inputs *Inputs) ScanInputs(filePath string) {
+func (inputs *Inputs) ScanInputs() {
 
 	//open file
-	file, err := os.Open(filePath)
+	file, err := os.Open(INPUT_FILE_PATH)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -57,7 +59,7 @@ func (inputs *Inputs) ScanInputs(filePath string) {
 		log.Println(err)
 	}
 
-	for i := 0; i < testCases; i++ {
+	for range testCases {
 
 		var input Input
 

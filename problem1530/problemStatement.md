@@ -25,7 +25,7 @@ Example 3:
 
 Constraints:
 
-* The number of nodes in the tree is in the range [1, 210].
+* The number of nodes in the tree is in the range [1, 2<sup>10</sup>].
 * 1 <= Node.val <= 100
 * 1 <= distance <= 10
 

@@ -2,6 +2,8 @@ package problem1530
 
 import "fmt"
 
+const INPUT_FILE_PATH = "problem1530\\sampleInputs.txt"
+
 type Input struct {
 	root     *TreeNode
 	distance int
