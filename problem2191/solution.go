@@ -7,13 +7,13 @@ import (
 )
 
 func sortJumbled(mapping []int, nums []int) []int {
-	
-    n := len(nums)
+
+	n := len(nums)
 
 	type number struct {
-		original string
+		original  string
 		converted string
-		index int
+		index     int
 	}
 
 	var numbers = make([]number, n)
@@ -24,8 +24,8 @@ func sortJumbled(mapping []int, nums []int) []int {
 			digit := int(num[i] - '0')
 			converted.WriteString(strconv.Itoa(mapping[digit]))
 		}
-        num = converted.String()
-        for len(num) > 1 && num[0] == '0' {
+		num = converted.String()
+		for len(num) > 1 && num[0] == '0' {
 			num = num[1:]
 		}
 		return num

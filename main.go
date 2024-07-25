@@ -1,7 +1,7 @@
 package main
 
 import (
-	problem "LeetCode/problem2191"
+	problem "LeetCode/problem912"
 )
 
 func main() {

@@ -22,7 +22,7 @@ type OutputPrinter interface {
 
 /**
 * Helper Functions
-*/
+ */
 func GetFileAsString(filePath string) string {
 	file, err := os.Open(filePath)
 	if err != nil {

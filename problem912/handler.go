@@ -1,4 +1,4 @@
-package problem2191
+package problem912
 
 import (
 	"LeetCode/constants"
@@ -10,11 +10,10 @@ import (
 	"strings"
 )
 
-const INPUT_FILE_PATH = "problem2191\\sampleInputs.txt"
+const INPUT_FILE_PATH = "problem912\\sampleInputs.txt"
 
 type Input struct {
-	mapping []int
-	nums    []int
+	nums []int
 }
 
 type Inputs []Input
@@ -30,7 +29,6 @@ Input Format :
 t (number of test cases)
 n (length of nums array) (for each test case)
 n space separated numbers representing the elements of nums array (for each test case)
-10 space separated digits representing the mapping (for each test case)
 */
 func (inputs *Inputs) ScanInputs() {
 
@@ -86,20 +84,6 @@ func (inputs *Inputs) ScanInputs() {
 			}
 		}
 
-		//scan for mapping
-		if !scanner.Scan() {
-			log.Println(constants.NO_TOKEN_TO_SCAN_ERROR, "mapping")
-		}
-		scan = scanner.Text()
-		mapping := strings.Split(scan, " ")
-		for j := range mapping {
-			digit, err := strconv.Atoi(mapping[j])
-			if err != nil {
-				log.Println(err)
-			}
-			input.mapping = append(input.mapping, digit)
-		}
-
 		*inputs = append(*inputs, input)
 	}
 }
@@ -107,7 +91,7 @@ func (inputs *Inputs) ScanInputs() {
 func (outputs *Outputs) CalculateOutputs(inputs any) {
 	for _, input := range inputs.(Inputs) {
 		var output Output
-		output.nums = sortJumbled(input.mapping, input.nums)
+		output.nums = sortArray(input.nums)
 		*outputs = append(*outputs, output)
 	}
 }
